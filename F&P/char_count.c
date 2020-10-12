@@ -1,18 +1,20 @@
-#include<stdio.h>
+#include <stdio.h>
+#define LEN 1000
 
 int main(){
-    char word[100];
-    int count = 0;
-    printf("Enter the string\n");
-    scanf("%[^\n]",&word);
-    while(1){
-        if(word[count]!='\0'){
-            count++;
-        }
-        else{
-            break;
-        }
+  char str[LEN];
+  int cnt = 0,index = 0;
+  printf("Enter the string\n");
+    scanf("%[^\n]", &str);
+  while(1){
+    if(str[index]=='\0'){
+      break;
     }
-    printf("%d",count);
-    return 0;
+    if((str[index]>=65&&str[index]<=90)||(str[index]>=97&&str[index]<=122)){
+      cnt++;
+    }
+    index++;
+  }
+  printf("%d", cnt);
+  return 0;
 }
